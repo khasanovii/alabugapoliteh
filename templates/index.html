@@ -1,0 +1,30 @@
+<form method="get">
+    {{ people_filter.form.as_p }}
+    <input type="submit"/>
+</form>
+<table border="1" style="width:100%; text-align:center">
+    <thead>
+        <tr>
+            <th>Name   </th>
+            <th>Surname</th>
+            <th>Age    </th>
+            <th>Status </th>
+            <th>Salary </th>
+            <th>Manager</th>
+            <th>Invite </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in people_filter.qs %}
+            <tr>
+                <th>{{ person.name    }}</th>
+                <th>{{ person.surname }}</th>
+                <th>{{ person.age     }}</th>
+                <th>{{ person.status  }}</th>
+                <th>{{ person.salary  }}</th>
+                <th>{{ person.manager }}</th>
+                <th>{{ person.invite  }}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
